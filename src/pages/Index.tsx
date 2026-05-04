@@ -1,4 +1,4 @@
-import { Linkedin, Mail, ArrowUpRight, Award, GraduationCap } from "lucide-react";
+import { Linkedin, Mail, ArrowUpRight, Award, GraduationCap, Sparkles, Compass, Rocket, Target, Layers, LineChart } from "lucide-react";
 import keshaPhoto from "@/assets/kesha.jpeg";
 
 const skills = [
@@ -28,6 +28,11 @@ const experience = [
       "Shipped 4 LLM-powered workflows; cut manual ops time by 62%.",
       "Defined eval framework (accuracy, latency, cost) adopted across 3 AI pods.",
     ],
+    metrics: [
+      { value: "$9.8M", label: "Cost saved" },
+      { value: "75%", label: "Turnaround cut" },
+      { value: "30%→5%", label: "Hallucination rate" },
+    ],
   },
   {
     role: "Product Manager",
@@ -37,6 +42,11 @@ const experience = [
       "Launched RAG-based knowledge assistant; drove 38% lift in self-serve resolution.",
       "Scaled experimentation from 2 to 12 tests per month.",
       "Led 0→1 launch of 2 products that became core revenue lines.",
+    ],
+    metrics: [
+      { value: "90%", label: "Engagement" },
+      { value: "40%", label: "Upsell revenue" },
+      { value: "75%", label: "Proposal quality ↑" },
     ],
   },
 ];
@@ -59,6 +69,34 @@ const projects = [
     blurb:
       "Internal tool tracking model cost, latency and eval scores per feature. Cut inference spend by 28% in one quarter.",
     tags: ["AI Ops", "Analytics"],
+  },
+];
+
+const howIWork = [
+  {
+    icon: Compass,
+    title: "Product thinking",
+    body: "Start with the user's job-to-be-done, not the model. Map the workflow, find the painful step, ask why three times.",
+  },
+  {
+    icon: Target,
+    title: "Strategy",
+    body: "Pick the smallest wedge with the largest pull. Bet on durable advantages: data, distribution, eval quality.",
+  },
+  {
+    icon: Layers,
+    title: "Planning",
+    body: "Risk-first roadmap. Vertical slices over phased rollouts. Every sprint ships something a user can touch.",
+  },
+  {
+    icon: Rocket,
+    title: "Execution",
+    body: "Eval-first AI: ground truth before prompts. Weekly demos, tight feedback loops, no silent regressions.",
+  },
+  {
+    icon: LineChart,
+    title: "Close the loop",
+    body: "Dashboards on cost, latency, accuracy. If it isn't measured, it isn't shipped.",
   },
 ];
 
@@ -92,14 +130,16 @@ const Index = () => {
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
           <a href="#skills" className="hover:text-foreground transition-colors">Skills</a>
           <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
-          <a href="#work" className="hover:text-foreground transition-colors">Work</a>
+          <a href="#work" className="hover:text-foreground transition-colors">Case studies</a>
+          <a href="#how" className="hover:text-foreground transition-colors">How I work</a>
           <a href="#education" className="hover:text-foreground transition-colors">Education</a>
           <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
         </nav>
       </header>
 
       {/* Hero */}
-      <section id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-12 sm:pt-20">
+      <section id="top" className="relative mx-auto max-w-5xl px-6 pb-20 pt-12 sm:pt-20">
+        <Sparkles className="absolute right-8 top-6 h-5 w-5 text-accent/60" strokeWidth={1.5} aria-hidden />
         <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
           <div>
             <p className="fade-in mb-6 text-sm uppercase tracking-[0.2em] text-accent">
@@ -134,9 +174,15 @@ const Index = () => {
           <div className="fade-in-up justify-self-center md:justify-self-end">
             <div className="relative">
               <div className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-2xl" />
+              <svg className="absolute -right-3 -top-3 h-10 w-10 text-accent/70" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden>
+                <path d="M20 4 L23 17 L36 20 L23 23 L20 36 L17 23 L4 20 L17 17 Z" />
+              </svg>
+              <svg className="absolute -bottom-2 -left-4 h-8 w-8 text-foreground/40" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden>
+                <circle cx="16" cy="16" r="12" strokeDasharray="3 4" />
+              </svg>
               <img
                 src={keshaPhoto}
-                alt="Kesha Kaneria, AI Product Manager and XLRI Jamshedpur student"
+                alt="Kesha Kaneria, AI Product Manager"
                 className="h-56 w-56 rounded-full object-cover shadow-[0_10px_40px_-10px_hsl(25_20%_12%/0.25)] sm:h-64 sm:w-64"
                 loading="eager"
               />
@@ -169,14 +215,25 @@ const Index = () => {
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
             <h2 className="font-display text-2xl font-medium">Experience</h2>
-            <ol className="space-y-10">
+            <ol className="space-y-12">
               {experience.map((e) => (
-                <li key={e.role} className="grid gap-2">
+                <li key={e.role} className="grid gap-4">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-display text-xl font-medium">
                       {e.role} · <span className="text-muted-foreground">{e.company}</span>
                     </h3>
                     <span className="text-sm text-muted-foreground">{e.period}</span>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {e.metrics.map((m) => (
+                      <div
+                        key={m.label}
+                        className="rounded-xl border hairline bg-card p-4 transition-colors hover:border-accent hover:bg-accent/5"
+                      >
+                        <div className="font-display text-2xl font-medium text-accent">{m.value}</div>
+                        <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{m.label}</div>
+                      </div>
+                    ))}
                   </div>
                   <ul className="mt-1 list-disc space-y-1 pl-5 text-muted-foreground">
                     {e.points.map((pt) => (
@@ -190,11 +247,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Selected Work */}
+      {/* Case Studies */}
       <section id="work" className="border-t hairline">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <h2 className="font-display text-2xl font-medium">Selected work</h2>
+            <h2 className="font-display text-2xl font-medium text-balance">From 0 → 1 in Production AI</h2>
             <div className="space-y-4">
               {projects.map((p) => (
                 <article
@@ -224,6 +281,27 @@ const Index = () => {
         </div>
       </section>
 
+      {/* How I Work */}
+      <section id="how" className="border-t hairline">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-[200px_1fr]">
+            <h2 className="font-display text-2xl font-medium">How I work</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {howIWork.map(({ icon: Icon, title, body }) => (
+                <div
+                  key={title}
+                  className="group rounded-2xl border hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
+                >
+                  <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
+                  <h3 className="mt-4 font-display text-lg font-medium">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Education */}
       <section id="education" className="border-t hairline">
         <div className="mx-auto max-w-5xl px-6 py-20">
@@ -232,7 +310,7 @@ const Index = () => {
             <ul className="space-y-8">
               {education.map((ed) => (
                 <li key={ed.school} className="flex items-start gap-4">
-                  <GraduationCap className="mt-1 h-5 w-5 text-accent" />
+                  <GraduationCap className="mt-1 h-5 w-5 text-accent" strokeWidth={1.5} />
                   <div className="flex-1">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h3 className="font-display text-lg font-medium">{ed.school}</h3>
@@ -255,7 +333,7 @@ const Index = () => {
             <ul className="divide-y hairline">
               {awards.map((a) => (
                 <li key={a.title} className="flex items-start gap-4 py-5 first:pt-0">
-                  <Award className="mt-1 h-5 w-5 shrink-0 text-accent" />
+                  <Award className="mt-1 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
                   <p className="flex-1 text-sm text-foreground/85">{a.title}</p>
                 </li>
               ))}
@@ -265,7 +343,8 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <footer id="contact" className="border-t hairline">
+      <footer id="contact" className="relative border-t hairline">
+        <Sparkles className="absolute right-8 top-8 h-5 w-5 text-accent/60" strokeWidth={1.5} aria-hidden />
         <div className="mx-auto max-w-5xl px-6 py-20">
           <h2 className="font-display text-3xl font-light text-balance sm:text-4xl">
             Let's build AI products that ship.
