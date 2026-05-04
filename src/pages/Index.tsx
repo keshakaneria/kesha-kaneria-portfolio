@@ -264,40 +264,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Placeholder to keep structure — will be removed */}
-      <section className="hidden">
-        <div></div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Awards */}
-      <section className="border-t hairline">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <h2 className="font-display text-2xl font-medium">Awards</h2>
-            <ul className="divide-y hairline">
-              {awards.map((a) => (
-                <li key={a.title} className="flex items-start gap-4 py-5 first:pt-0">
-                  <Award className="mt-1 h-5 w-5 text-accent" />
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="font-medium">{a.title}</h3>
-                      <span className="text-sm text-muted-foreground">{a.year}</span>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{a.org}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <footer id="contact" className="border-t hairline">
         <div className="mx-auto max-w-5xl px-6 py-20">
