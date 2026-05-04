@@ -21,7 +21,7 @@ const skills = [
 const experience = [
   {
     role: "Product Manager, AI",
-    company: "Tech Company",
+    company: "Techolution",
     period: "2023 – Present",
     points: [
       "Own roadmap for an agentic platform serving 50K+ enterprise users.",
@@ -31,21 +31,12 @@ const experience = [
   },
   {
     role: "Product Manager",
-    company: "SaaS Startup",
+    company: "SuperAlign",
     period: "2021 – 2023",
     points: [
       "Launched RAG-based knowledge assistant; drove 38% lift in self-serve resolution.",
       "Scaled experimentation from 2 to 12 tests per month.",
       "Led 0→1 launch of 2 products that became core revenue lines.",
-    ],
-  },
-  {
-    role: "Associate Product Manager",
-    company: "Consumer App",
-    period: "2019 – 2021",
-    points: [
-      "Redesigned discovery feed; +19% daily sessions.",
-      "Built first user persona library with research team.",
     ],
   },
 ];
@@ -73,23 +64,22 @@ const projects = [
 
 const education = [
   {
-    school: "XLRI Jamshedpur",
+    school: "XLRI Jamshedpur, Xavier School of Management",
     degree: "Post Graduate Diploma in Management (HRM)",
     period: "2024 – 2026",
-    note: "One of India's top business schools.",
   },
   {
     school: "Undergraduate Degree",
     degree: "B.E. / B.Tech",
-    period: "2015 – 2019",
-    note: "First class with distinction.",
+    period: "2017 – 2021",
   },
 ];
 
 const awards = [
-  { title: "Product Excellence Award", org: "Internal recognition for quarterly OKR impact", year: "2024" },
-  { title: "Top 30 Under 30, Product", org: "Selected from 2,000+ nominations", year: "2023" },
-  { title: "Hackathon Winner", org: "First place, AI-assisted research tool", year: "2022" },
+  { title: "Awarded 9× for highest-impact delivery among 25 PMs across 3 concurrent products" },
+  { title: "Selected as first PM for HQ collaboration (US, 2024), working directly with the CEO" },
+  { title: "Founded PMO & SOPs (30 PMs / 22 products) for delivery velocity, early risk identification, and leadership visibility" },
+  { title: "Won Badminton (Singles & Doubles) at company-wide tournament" },
 ];
 
 const Index = () => {
@@ -113,7 +103,7 @@ const Index = () => {
         <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
           <div>
             <p className="fade-in mb-6 text-sm uppercase tracking-[0.2em] text-accent">
-              AI Product Manager · XLRI Jamshedpur
+              AI Product Manager
             </p>
             <h1 className="fade-in-up font-display text-5xl font-light leading-[1.05] text-balance sm:text-6xl">
               Kesha Kaneria
@@ -164,7 +154,7 @@ const Index = () => {
               {skills.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border hairline bg-card px-4 py-2 text-sm text-foreground/80"
+                  className="cursor-default rounded-full border hairline bg-card px-4 py-2 text-sm text-foreground/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:bg-accent/10 hover:text-foreground hover:shadow-sm"
                 >
                   {s}
                 </span>
@@ -249,7 +239,6 @@ const Index = () => {
                       <span className="text-sm text-muted-foreground">{ed.period}</span>
                     </div>
                     <p className="mt-1 text-sm text-foreground/80">{ed.degree}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{ed.note}</p>
                   </div>
                 </li>
               ))}
@@ -266,14 +255,8 @@ const Index = () => {
             <ul className="divide-y hairline">
               {awards.map((a) => (
                 <li key={a.title} className="flex items-start gap-4 py-5 first:pt-0">
-                  <Award className="mt-1 h-5 w-5 text-accent" />
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="font-medium">{a.title}</h3>
-                      <span className="text-sm text-muted-foreground">{a.year}</span>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{a.org}</p>
-                  </div>
+                  <Award className="mt-1 h-5 w-5 shrink-0 text-accent" />
+                  <p className="flex-1 text-sm text-foreground/85">{a.title}</p>
                 </li>
               ))}
             </ul>
@@ -303,7 +286,7 @@ const Index = () => {
               href="mailto:kesha.kaneria07@gmail.com"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              <Mail className="h-4 w-4" /> kesha.kaneria07@gmail.com
+              <Mail className="h-4 w-4" /> Email
             </a>
           </div>
           <p className="mt-16 text-xs text-muted-foreground">
