@@ -286,7 +286,7 @@ const Index = () => {
               href="mailto:kesha.kaneria07@gmail.com"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              <Mail className="h-4 w-4" /> kesha.kaneria07@gmail.com
+              <Mail className="h-4 w-4" /> Email
             </a>
           </div>
           <p className="mt-16 text-xs text-muted-foreground">
