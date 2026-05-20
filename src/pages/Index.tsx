@@ -109,7 +109,7 @@ const products = [
     description:
       "Prioritize features by ROI so teams ship what moves the business first, not what is loudest in the room.",
     githubUrl: "https://github.com/keshakaneria/FeatureIQ",
-    liveUrl: "https://featureiq.keshakaneria.com",
+    liveUrl: "https://featureiq.keshakaneria.in",
   },
   {
     name: "🐾 Raasta",
@@ -128,7 +128,7 @@ const products = [
     name: "💁‍♀️ Portfolio",
     description: "This site. Designed, written, and shipped by me. : )",
     githubUrl: "https://github.com/keshakaneria/kesha-kaneria-portfolio",
-    liveUrl: "https://keshakaneria.com",
+    liveUrl: "https://keshakaneria.in",
   },
 ];
 
@@ -481,18 +481,24 @@ const Index = () => {
               <div className="grid gap-4 sm:grid-cols-2">
                 {products.map((p, i) => {
                   const isClickable = !!p.liveUrl;
-                  
+
                   const cardInner = (
                     <div
-                      id={`project-card-${p.name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`}
+                      id={`project-card-${p.name
+                        .replace(/[^a-zA-Z0-9]/g, "")
+                        .toLowerCase()}`}
                       onClick={() => {
                         if (isClickable) {
-                          window.open(p.liveUrl, "_blank", "noopener,noreferrer");
+                          window.open(
+                            p.liveUrl,
+                            "_blank",
+                            "noopener,noreferrer"
+                          );
                         }
                       }}
                       className={`group rounded-2xl border hairline bg-card p-6 transition-all ${
-                        isClickable 
-                          ? "cursor-pointer hover:-translate-y-0.5 hover:border-accent hover:shadow-sm" 
+                        isClickable
+                          ? "cursor-pointer hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
                           : ""
                       }`}
                     >
@@ -502,7 +508,9 @@ const Index = () => {
                         </h3>
                         <div className="flex items-center gap-3">
                           <a
-                            id={`project-github-${p.name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`}
+                            id={`project-github-${p.name
+                              .replace(/[^a-zA-Z0-9]/g, "")
+                              .toLowerCase()}`}
                             href={p.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -529,18 +537,12 @@ const Index = () => {
                         <TooltipTrigger asChild>
                           <div>{cardInner}</div>
                         </TooltipTrigger>
-                        <TooltipContent side="top">
-                          Coming Soon
-                        </TooltipContent>
+                        <TooltipContent side="top">Coming Soon</TooltipContent>
                       </Tooltip>
                     );
                   }
 
-                  return (
-                    <div key={i}>
-                      {cardInner}
-                    </div>
-                  );
+                  return <div key={i}>{cardInner}</div>;
                 })}
               </div>
             </div>
