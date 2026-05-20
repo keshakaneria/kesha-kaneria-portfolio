@@ -15,12 +15,18 @@ import {
   Workflow,
   Zap,
   Brain,
+  Github,
 } from "lucide-react";
 import keshaPhoto from "@/assets/kesha.jpeg";
 import { Reveal } from "@/components/Reveal";
 import { RotatingWord } from "@/components/RotatingWord";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const rotatingRoles = [
   "0→1 Builder",
@@ -102,20 +108,27 @@ const products = [
     name: "🚀 FeatureIQ",
     description:
       "Prioritize features by ROI so teams ship what moves the business first, not what is loudest in the room.",
+    githubUrl: "https://github.com/keshakaneria/FeatureIQ",
+    liveUrl: "https://featureiq.keshakaneria.com",
   },
   {
     name: "🐾 Raasta",
     description:
       "An AI agentic assistant that helps PMs build and iterate on product roadmaps in minutes, not weeks.",
+    githubUrl: "https://github.com/keshakaneria/Raasta",
+    status: "coming-soon",
   },
   {
     name: "📑 ResumeAI",
     description:
       "Scores your resume against a job description and surfaces the exact gaps holding you back from the shortlist.",
+    githubUrl: "https://github.com/keshakaneria/ResumeAI",
   },
   {
     name: "💁‍♀️ Portfolio",
     description: "This site. Designed, written, and shipped by me. : )",
+    githubUrl: "https://github.com/keshakaneria/kesha-kaneria-portfolio",
+    liveUrl: "https://keshakaneria.com",
   },
 ];
 
@@ -466,22 +479,69 @@ const Index = () => {
             </div>
             <div className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
-                {products.map((p, i) => (
-                  <div
-                    key={i}
-                    className="group rounded-2xl border hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
-                  >
-                    <div className="flex items-start justify-between">
-                      <h3 className="font-display text-lg font-medium">
-                        {p.name}
-                      </h3>
-                      <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                {products.map((p, i) => {
+                  const isClickable = !!p.liveUrl;
+                  
+                  const cardInner = (
+                    <div
+                      id={`project-card-${p.name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`}
+                      onClick={() => {
+                        if (isClickable) {
+                          window.open(p.liveUrl, "_blank", "noopener,noreferrer");
+                        }
+                      }}
+                      className={`group rounded-2xl border hairline bg-card p-6 transition-all ${
+                        isClickable 
+                          ? "cursor-pointer hover:-translate-y-0.5 hover:border-accent hover:shadow-sm" 
+                          : ""
+                      }`}
+                    >
+                      <div className="flex items-start justify-between">
+                        <h3 className="font-display text-lg font-medium">
+                          {p.name}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <a
+                            id={`project-github-${p.name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`}
+                            href={p.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded-md hover:bg-secondary"
+                            aria-label={`View ${p.name} code on GitHub`}
+                          >
+                            <Github className="h-4 w-4" />
+                          </a>
+                          {isClickable && (
+                            <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                          )}
+                        </div>
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {p.description}
+                      </p>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {p.description}
-                    </p>
-                  </div>
-                ))}
+                  );
+
+                  if (p.status === "coming-soon") {
+                    return (
+                      <Tooltip key={i}>
+                        <TooltipTrigger asChild>
+                          <div>{cardInner}</div>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">
+                          Coming Soon
+                        </TooltipContent>
+                      </Tooltip>
+                    );
+                  }
+
+                  return (
+                    <div key={i}>
+                      {cardInner}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
