@@ -1,30 +1,53 @@
-import { Linkedin, Mail, ArrowUpRight, Award, GraduationCap, Sparkles, Compass, Rocket, Target, Layers, LineChart, Code2, Cpu, Workflow, Zap, Brain } from "lucide-react";
+import {
+  Linkedin,
+  Mail,
+  ArrowUpRight,
+  Award,
+  GraduationCap,
+  Sparkles,
+  Compass,
+  Rocket,
+  Target,
+  Layers,
+  LineChart,
+  Code2,
+  Cpu,
+  Workflow,
+  Zap,
+  Brain,
+} from "lucide-react";
 import keshaPhoto from "@/assets/kesha.jpeg";
 import { Reveal } from "@/components/Reveal";
 import { RotatingWord } from "@/components/RotatingWord";
 import { Badge } from "@/components/ui/badge";
 
-const rotatingRoles = ["Builder", "Strategist", "0→1 Operator", "Tech-native PM"];
+const rotatingRoles = [
+  "0→1 Builder",
+  "Strategist",
+  "Tech-native PM",
+  "Program Manager",
+];
 
 const heroMetrics = [
-  { value: "4.5+ yrs", label: "in Product" },
-  { value: "10+", label: "products shipped 0→1" },
-  { value: "$9.8M", label: "business impact" },
+  { value: "5+ yrs", label: "in Product" },
+  { value: "14+", label: "products shipped 0→1" },
+  { value: "$22M", label: "business impact" },
   { value: "50K+", label: "users impacted" },
 ];
 
 const quickProfile = {
   role: "AI Product Manager, Techolution",
-  education: "B.Tech Computer Science and Engineering (Cybersecurity) + PGDM, XLRI Jamshedpur",
-  focus: "LLM Products, Agentic AI, RAG Systems, Enterprise AI at Scale",
-  location: "Hyderabad, India"
+  education:
+    "PGDM, XLRI Jamshedpur + B.Tech Computer Science and Engineering (Cybersecurity)",
+  focus: "AI Product Strategy · 0 to 1 Building · Data Driven Roadmapping",
+  location: "Hyderabad, India",
 };
 
 const profileChips = [
   { icon: Code2, text: "B.Tech CSE" },
-  { icon: GraduationCap, text: "MBA, XLRI Jamshedpur" },
-  { icon: Cpu, text: "LLM & Agents" },
-  { icon: Workflow, text: "0→1 builder" },
+  { icon: GraduationCap, text: "PGDM, XLRI Jamshedpur" },
+  { icon: Cpu, text: "Growth & Retention" },
+  { icon: Workflow, text: "AI Strategy" },
 ];
 
 const experience = [
@@ -32,7 +55,8 @@ const experience = [
     company: "Techolution",
     role: "AI Product Manager",
     period: "January 2024 – Present",
-    products: "Sales Genius · Triage AI · Ana (American Cancer Society) · Codebase Insights · Appmod AI · RLEF · Doorbot · AI Hand",
+    products:
+      "Sales Genius · Triage AI · Codebase Insights · Appmod AI · RLEF · Doorbot · AI Hand etc.",
     ownership: [
       "Full product strategy for an LLM-powered pre-sales platform serving 70 enterprise deals annually",
       "Designed RAG pipelines grounding outputs in verified enterprise data, saving ~$4K per proposal in SDR rework",
@@ -41,138 +65,199 @@ const experience = [
       "Launched Appmod AI for 300+ engineers, cutting time-to-resolution by 90%",
       "Delivered AI search and recommendation system handling 270K+ queries and 300K+ interactions",
       "Established weekly release cadence across 12 concurrent AI products, improving time-to-market by 3x",
-      "Ran AI feedback pipeline that improved proposal quality 75%, recommendation accuracy 50%, and cut user corrections 80%"
+      "Ran AI feedback pipeline that improved proposal quality 75%, recommendation accuracy 50%, and cut user corrections 80%",
     ],
     impact: [
       { label: "Annual cost savings", value: "$9.8M" },
       { label: "Enterprise deals/year", value: "70" },
       { label: "Engagement uplift", value: "90%" },
       { label: "Upsell revenue increase", value: "40%" },
-      { label: "Drop in human escalations", value: "80%" }
-    ]
+      { label: "Drop in human escalations", value: "80%" },
+    ],
   },
   {
     company: "SuperAlign",
     role: "Associate Product Manager",
     period: "July 2022 – December 2023",
-    products: "ML Workflow Platform · Conspicuity Tape Supply Chain Platform · Enterprise Adoption Tracking System",
+    products: "PureML: ML Workflow Platform · TapeIt",
     ownership: [
       "Introduced data-driven prioritization framework, increasing feature throughput 66% and cutting delays from 4 days to 1",
       "Conducted user interviews with ML engineers to identify friction in model iteration cycles, then redesigned UX to reduce cognitive load",
       "Redesigned ML workflow UX around versioning and feedback loops, improving how frequently engineers could run meaningful model iterations",
       "Designed user feedback loops and adoption tracking that increased enterprise feature adoption 25% within the first quarter",
-      "Built 0 to 1 supply chain platform replacing unorganized ledgers, improving operational efficiency 40%"
+      "Built 0 to 1 supply chain platform replacing unorganized ledgers, improving operational efficiency 40%",
     ],
     impact: [
       { label: "Throughput increase", value: "66%" },
       { label: "Enterprise adoption uplift", value: "25%" },
       { label: "Operational efficiency gain", value: "40%" },
-      { label: "Delivery cycle reduction", value: "4d → 1d" }
-    ]
-  }
+      { label: "Delivery cycle reduction", value: "4d → 1d" },
+    ],
+  },
 ];
 
 const products = [
-  { name: "ROI-focused Feature Prioritization", description: "AI assistant for the American Cancer Society" },
-  { name: "ResumeAI", description: "LLM-powered pre-sales platform for enterprise deals" },
-  { name: "Portfolio", description: "Automated support ticket classification and routing" },
+  {
+    name: "🚀 FeatureIQ",
+    description:
+      "Prioritize features by ROI so teams ship what moves the business first, not what is loudest in the room.",
+  },
+  {
+    name: "🐾 Raasta",
+    description:
+      "An AI agentic assistant that helps PMs build and iterate on product roadmaps in minutes, not weeks.",
+  },
+  {
+    name: "📑 ResumeAI",
+    description:
+      "Scores your resume against a job description and surfaces the exact gaps holding you back from the shortlist.",
+  },
+  {
+    name: "💁‍♀️ Portfolio",
+    description: "This site. Designed, written, and shipped by me. : )",
+  },
 ];
 
 const howIbuild = [
   {
     category: "Product Thinking",
     points: [
-      "I interview users, map friction, and separate what people say from what they actually need",
-      "I designed eval metrics for AI output (deal velocity, win rate, accuracy) before most teams had a framework for it",
-      "My cybersecurity and CS background means I understand risk at the system level, not just the surface level"
+      "I separate what users say from what they actually need, and build the spec around the gap",
+      "I defined AI output metrics before most teams had a framework for it, covering accuracy, deal velocity, and win rate, cutting review cycles in the process",
+      "My CS and cybersecurity background means I catch product risk at the system level before it reaches users",
     ],
-    icon: Brain
+    icon: Brain,
   },
   {
     category: "Strategy",
     points: [
-      "I've prioritized across 12 concurrent products without letting any of them drift",
-      "I know what to say no to and why, backed by data not instinct alone",
-      "I align product roadmaps to business outcomes that CFOs and CTOs can both read"
+      "I have prioritized across 12 concurrent products while keeping each on track and each team aligned",
+      "My NOs are data backed. I document the tradeoff, not just the decision",
+      "I write roadmaps that a CFO reads as a growth plan and a CTO reads as a technical commitment",
     ],
-    icon: Target
+    icon: Target,
   },
   {
     category: "Planning",
     points: [
-      "Weekly release cycles across 12 AI products, coordinating cross-functional teams without slippage",
-      "I run dependency mapping, risk identification, and milestone sequencing before the sprint starts",
-      "Led PMO setup and SOPs across 30 PMs and 22 products for delivery velocity and leadership visibility"
+      "I run weekly releases across 12 AI products by sequencing dependencies and owning the risk map before the sprint opens, with zero slippage across cycles",
+      "I set up a PMO and delivery standards across 22 products that gave leadership same day visibility without adding a single status meeting",
+      "I own the dependency map and risk register before the sprint opens, so the team never hits a blocker that was not already on my radar",
     ],
-    icon: Layers
+    icon: Layers,
   },
   {
     category: "Execution",
     points: [
-      "I own quality in production, not just delivery to staging",
-      "I built the hallucination detection layer myself (no hand-off to engineering to \"figure it out\")",
-      "I instrument funnels, track drop-offs, and iterate until the number moves"
+      "I ship to production and stay accountable until the metric moves, not until the ticket closes",
+      "I instrument every funnel, find where users drop, and iterate until retention improves",
+      "I have shipped AI features that non technical stakeholders could explain to their board the next morning",
     ],
-    icon: Rocket
-  }
+    icon: Rocket,
+  },
 ];
 
 const education = [
   {
     school: "XLRI Jamshedpur, Xavier School of Management",
-    degree: "Post Graduate Diploma in Management (HRM)",
-    period: "2024 – 2026",
+    degree: "Post Graduate Diploma in Management (Business Management)",
+    period: "2023 – 2025",
   },
   {
-    school: "Undergraduate Degree",
+    school: "Rashtriya Raksha University",
     degree: "B.Tech, Computer Science & Engineering",
-    period: "2017 – 2021",
+    period: "2018 – 2022",
   },
 ];
 
 const awards = [
-  { title: "Awarded 9× for highest-impact delivery among 25 PMs across 3 concurrent products" },
-  { title: "Selected as first PM for HQ collaboration (US, 2024), working directly with the CEO" },
-  { title: "Founded PMO & SOPs (30 PMs / 22 products) for delivery velocity, early risk identification, and leadership visibility" },
-  { title: "Won Badminton (Singles & Doubles) at company-wide tournament" },
+  {
+    title:
+      "Selected as the first PM for direct CEO collaboration at Techolution US headquarters in 2024, out of a team of 25 PMs across the organization.",
+  },
+  {
+    title:
+      "Founded the PMO and SOP framework across 30 PMs and 22 products, enabling early risk identification and real time leadership visibility",
+  },
+  {
+    title:
+      "Awarded 9 times for highest impact delivery across 3 concurrent products, the most recognitions received by any PM in the team",
+  },
+  { title: "Won Badminton Singles and Doubles at the company wide tournament" },
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
-        <a href="#top" className="font-display text-lg font-medium tracking-tight">
+        <a
+          href="#top"
+          className="font-display text-lg font-medium tracking-tight"
+        >
           Kesha Kaneria
         </a>
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
-          <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
-          <a href="#products" className="hover:text-foreground transition-colors">Building</a>
-          <a href="#why-me" className="hover:text-foreground transition-colors">How I work</a>
-          <a href="#education" className="hover:text-foreground transition-colors">Education</a>
-          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+          <a
+            href="#experience"
+            className="hover:text-foreground transition-colors"
+          >
+            Experience
+          </a>
+          <a
+            href="#products"
+            className="hover:text-foreground transition-colors"
+          >
+            Building Now
+          </a>
+          <a href="#why-me" className="hover:text-foreground transition-colors">
+            How I work
+          </a>
+          <a
+            href="#education"
+            className="hover:text-foreground transition-colors"
+          >
+            Education
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-foreground transition-colors"
+          >
+            Contact
+          </a>
         </nav>
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative mx-auto max-w-5xl px-6 pb-20 pt-12 sm:pt-20">
-        <Sparkles className="absolute right-8 top-6 h-5 w-5 text-accent/60 animate-pulse" strokeWidth={1.5} aria-hidden />
+      <section
+        id="top"
+        className="relative mx-auto max-w-5xl px-6 pb-20 pt-12 sm:pt-20"
+      >
+        <Sparkles
+          className="absolute right-8 top-6 h-5 w-5 text-accent/60 animate-pulse"
+          strokeWidth={1.5}
+          aria-hidden
+        />
         <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
           <div>
             <p className="fade-in mb-6 flex flex-wrap items-center gap-x-2 text-sm uppercase tracking-[0.2em] text-accent">
               <span>AI Product Manager</span>
               <span className="text-muted-foreground">·</span>
-              <RotatingWord words={rotatingRoles} className="text-foreground/80" />
+              <RotatingWord
+                words={rotatingRoles}
+                className="text-foreground/80"
+              />
             </p>
             <h1 className="fade-in-up font-display text-5xl font-light leading-[1.05] text-balance sm:text-6xl">
               Kesha Kaneria
             </h1>
             <p className="fade-in-up mt-6 text-xl leading-snug text-foreground/90 text-balance">
-              I build LLM applications and agentic platforms that ship to production —
-              and stay reliable once they're there.
+              I build LLM applications and agentic platforms that{" "}
+              <b>ship to production</b> and stay <b>reliable</b> once they're
+              there.
             </p>
             <p className="fade-in-up mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Engineer-turned-PM. I read the code before I write the spec, design the
-              eval before I pick the model, and own the outcome long after launch.
+              Engineer-turned-PM. I think in systems, talk in outcomes, and ship
+              AI products that stay reliable long after launch.
             </p>
 
             <div className="fade-in-up mt-6 flex flex-wrap gap-2">
@@ -181,7 +266,10 @@ const Index = () => {
                   key={text}
                   className="inline-flex items-center gap-1.5 rounded-full border hairline bg-card px-3 py-1.5 text-xs text-foreground/80"
                 >
-                  <Icon className="h-3.5 w-3.5 text-accent" strokeWidth={1.75} />
+                  <Icon
+                    className="h-3.5 w-3.5 text-accent"
+                    strokeWidth={1.75}
+                  />
                   {text}
                 </span>
               ))}
@@ -205,10 +293,25 @@ const Index = () => {
           <div className="fade-in-up justify-self-center md:justify-self-end">
             <div className="relative">
               <div className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-2xl animate-pulse" />
-              <svg className="absolute -right-3 -top-3 h-10 w-10 text-accent/70" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden>
+              <svg
+                className="absolute -right-3 -top-3 h-10 w-10 text-accent/70"
+                viewBox="0 0 40 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                aria-hidden
+              >
                 <path d="M20 4 L23 17 L36 20 L23 23 L20 36 L17 23 L4 20 L17 17 Z" />
               </svg>
-              <svg className="absolute -bottom-2 -left-4 h-8 w-8 text-foreground/40 animate-spin" style={{ animationDuration: "18s" }} viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden>
+              <svg
+                className="absolute -bottom-2 -left-4 h-8 w-8 text-foreground/40 animate-spin"
+                style={{ animationDuration: "18s" }}
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                aria-hidden
+              >
                 <circle cx="16" cy="16" r="12" strokeDasharray="3 4" />
               </svg>
               <img
@@ -230,8 +333,12 @@ const Index = () => {
                 delay={idx * 80}
                 className="rounded-2xl border hairline bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
               >
-                <div className="font-display text-3xl font-medium text-foreground">{m.value}</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{m.label}</div>
+                <div className="font-display text-3xl font-medium text-foreground">
+                  {m.value}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  {m.label}
+                </div>
               </Reveal>
             ))}
           </div>
@@ -243,20 +350,36 @@ const Index = () => {
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-1">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Current Role</div>
-              <div className="text-sm font-medium text-foreground">{quickProfile.role}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Current Role
+              </div>
+              <div className="text-sm font-medium text-foreground">
+                {quickProfile.role}
+              </div>
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Education</div>
-              <div className="text-sm font-medium text-foreground">{quickProfile.education}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Education
+              </div>
+              <div className="text-sm font-medium text-foreground">
+                {quickProfile.education}
+              </div>
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Focus Areas</div>
-              <div className="text-sm font-medium text-foreground">{quickProfile.focus}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Focus Areas
+              </div>
+              <div className="text-sm font-medium text-foreground">
+                {quickProfile.focus}
+              </div>
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Location</div>
-              <div className="text-sm font-medium text-foreground">{quickProfile.location}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Location
+              </div>
+              <div className="text-sm font-medium text-foreground">
+                {quickProfile.location}
+              </div>
             </div>
           </div>
         </div>
@@ -272,13 +395,20 @@ const Index = () => {
                 <div key={exp.company} className="grid gap-6">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-display text-xl font-medium">
-                      {exp.role} · <span className="text-muted-foreground">{exp.company}</span>
+                      {exp.role} ·{" "}
+                      <span className="text-muted-foreground">
+                        {exp.company}
+                      </span>
                     </h3>
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {exp.period}
+                    </span>
                   </div>
 
                   <div className="rounded-xl border hairline bg-card p-4 text-xs italic text-muted-foreground">
-                    <span className="font-medium non-italic text-foreground mr-2">Products:</span>
+                    <span className="font-medium non-italic text-foreground mr-2">
+                      Products:
+                    </span>
                     {exp.products}
                   </div>
 
@@ -290,9 +420,16 @@ const Index = () => {
 
                   <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
                     {exp.impact.map((stat, i) => (
-                      <div key={i} className="rounded-lg border hairline bg-card p-3 text-center transition-colors hover:border-accent/30">
-                        <div className="text-lg font-medium text-accent">{stat.value}</div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">{stat.label}</div>
+                      <div
+                        key={i}
+                        className="rounded-lg border hairline bg-card p-3 text-center transition-colors hover:border-accent/30"
+                      >
+                        <div className="text-lg font-medium text-accent">
+                          {stat.value}
+                        </div>
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">
+                          {stat.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -308,25 +445,29 @@ const Index = () => {
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
             <div className="space-y-4">
-              <h2 className="font-display text-2xl font-medium">AI I've Shipped</h2>
-              <p className="text-sm text-muted-foreground">Every product below went to production under my ownership.</p>
+              <h2 className="font-display text-2xl font-medium">
+                Building Now
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Every product below went to production under my ownership.
+              </p>
             </div>
             <div className="space-y-6">
-              <div className="flex flex-wrap gap-2">
-                {products.map((p) => (
-                  <Badge key={p.name} variant="outline" className="rounded-full border-hairline font-normal text-xs text-muted-foreground">
-                    {p.name}
-                  </Badge>
-                ))}
-              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {products.map((p, i) => (
-                  <div key={i} className="group rounded-2xl border hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm">
+                  <div
+                    key={i}
+                    className="group rounded-2xl border hairline bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
+                  >
                     <div className="flex items-start justify-between">
-                      <h3 className="font-display text-lg font-medium">{p.name}</h3>
+                      <h3 className="font-display text-lg font-medium">
+                        {p.name}
+                      </h3>
                       <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors" />
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {p.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -347,11 +488,16 @@ const Index = () => {
                   <div key={i} className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                      <h3 className="font-display text-lg font-medium">{item.category}</h3>
+                      <h3 className="font-display text-lg font-medium">
+                        {item.category}
+                      </h3>
                     </div>
                     <ul className="space-y-3">
                       {item.points.map((p, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+                        <li
+                          key={j}
+                          className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed"
+                        >
                           <span className="mt-1.5 h-1 w-1 rounded-full bg-accent shrink-0" />
                           <span>{p}</span>
                         </li>
@@ -369,18 +515,29 @@ const Index = () => {
       <section id="education" className="border-t hairline">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <Reveal><h2 className="font-display text-2xl font-medium">Education</h2></Reveal>
+            <Reveal>
+              <h2 className="font-display text-2xl font-medium">Education</h2>
+            </Reveal>
             <ul className="space-y-8">
               {education.map((ed, idx) => (
                 <Reveal as="li" key={ed.school} delay={idx * 80}>
                   <div className="flex items-start gap-4">
-                    <GraduationCap className="mt-1 h-5 w-5 text-accent" strokeWidth={1.5} />
+                    <GraduationCap
+                      className="mt-1 h-5 w-5 text-accent"
+                      strokeWidth={1.5}
+                    />
                     <div className="flex-1">
                       <div className="flex flex-wrap items-baseline justify-between gap-2">
-                        <h3 className="font-display text-lg font-medium">{ed.school}</h3>
-                        <span className="text-sm text-muted-foreground">{ed.period}</span>
+                        <h3 className="font-display text-lg font-medium">
+                          {ed.school}
+                        </h3>
+                        <span className="text-sm text-muted-foreground">
+                          {ed.period}
+                        </span>
                       </div>
-                      <p className="mt-1 text-sm text-foreground/80">{ed.degree}</p>
+                      <p className="mt-1 text-sm text-foreground/80">
+                        {ed.degree}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
@@ -394,13 +551,20 @@ const Index = () => {
       <section className="border-t hairline">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[200px_1fr]">
-            <Reveal><h2 className="font-display text-2xl font-medium">Awards</h2></Reveal>
+            <Reveal>
+              <h2 className="font-display text-2xl font-medium">Awards</h2>
+            </Reveal>
             <ul className="divide-y hairline">
               {awards.map((a, idx) => (
                 <Reveal as="li" key={a.title} delay={idx * 60}>
                   <div className="flex items-start gap-4 py-5">
-                    <Award className="mt-1 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
-                    <p className="flex-1 text-sm text-foreground/85">{a.title}</p>
+                    <Award
+                      className="mt-1 h-5 w-5 shrink-0 text-accent"
+                      strokeWidth={1.5}
+                    />
+                    <p className="flex-1 text-sm text-foreground/85">
+                      {a.title}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -411,7 +575,11 @@ const Index = () => {
 
       {/* Contact */}
       <footer id="contact" className="relative border-t hairline">
-        <Sparkles className="absolute right-8 top-8 h-5 w-5 text-accent/60" strokeWidth={1.5} aria-hidden />
+        <Sparkles
+          className="absolute right-8 top-8 h-5 w-5 text-accent/60"
+          strokeWidth={1.5}
+          aria-hidden
+        />
         <div className="mx-auto max-w-5xl px-6 py-20">
           <Reveal>
             <h2 className="font-display text-3xl font-light text-balance sm:text-4xl">
@@ -420,7 +588,8 @@ const Index = () => {
           </Reveal>
           <Reveal delay={80}>
             <p className="mt-4 max-w-xl text-muted-foreground">
-              Open to AI PM roles, agentic platform projects and product collaborations.
+              Open to AI PM roles at product led companies, agentic platform
+              projects, and strategic product collaborations.
             </p>
           </Reveal>
           <Reveal delay={160}>
