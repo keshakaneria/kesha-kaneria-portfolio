@@ -19,6 +19,7 @@ import {
 import keshaPhoto from "@/assets/kesha.jpeg";
 import { Reveal } from "@/components/Reveal";
 import { RotatingWord } from "@/components/RotatingWord";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { Badge } from "@/components/ui/badge";
 
 const rotatingRoles = [
@@ -191,6 +192,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
         <a
+          id="header-logo-link"
           href="#top"
           className="font-display text-lg font-medium tracking-tight"
         >
@@ -198,27 +200,35 @@ const Index = () => {
         </a>
         <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
           <a
+            id="nav-link-experience"
             href="#experience"
             className="hover:text-foreground transition-colors"
           >
             Experience
           </a>
           <a
+            id="nav-link-products"
             href="#products"
             className="hover:text-foreground transition-colors"
           >
             Building Now
           </a>
-          <a href="#why-me" className="hover:text-foreground transition-colors">
+          <a
+            id="nav-link-how-i-work"
+            href="#why-me"
+            className="hover:text-foreground transition-colors"
+          >
             How I work
           </a>
           <a
+            id="nav-link-education"
             href="#education"
             className="hover:text-foreground transition-colors"
           >
             Education
           </a>
           <a
+            id="nav-link-contact"
             href="#contact"
             className="hover:text-foreground transition-colors"
           >
@@ -277,12 +287,14 @@ const Index = () => {
 
             <div className="fade-in-up mt-8 flex flex-wrap gap-3">
               <a
+                id="hero-contact-button"
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90 hover:-translate-y-0.5"
               >
                 Get in touch <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
+                id="hero-products-button"
                 href="#products"
                 className="inline-flex items-center gap-2 rounded-full border hairline px-5 py-3 text-sm font-medium transition-all hover:bg-secondary hover:-translate-y-0.5"
               >
@@ -334,7 +346,7 @@ const Index = () => {
                 className="rounded-2xl border hairline bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
               >
                 <div className="font-display text-3xl font-medium text-foreground">
-                  {m.value}
+                  <AnimatedCounter value={m.value} />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
                   {m.label}
@@ -425,7 +437,7 @@ const Index = () => {
                         className="rounded-lg border hairline bg-card p-3 text-center transition-colors hover:border-accent/30"
                       >
                         <div className="text-lg font-medium text-accent">
-                          {stat.value}
+                          <AnimatedCounter value={stat.value} />
                         </div>
                         <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">
                           {stat.label}
@@ -595,6 +607,7 @@ const Index = () => {
           <Reveal delay={160}>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
+                id="contact-linkedin-link"
                 href="https://www.linkedin.com/in/kesha-k-kaneria/"
                 target="_blank"
                 rel="noreferrer"
@@ -603,6 +616,7 @@ const Index = () => {
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
               <a
+                id="contact-email-link"
                 href="mailto:kesha.kaneria07@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90 hover:-translate-y-0.5"
               >
