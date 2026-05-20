@@ -496,7 +496,7 @@ const Index = () => {
                           );
                         }
                       }}
-                      className={`group rounded-2xl border hairline bg-card p-6 transition-all ${
+                      className={`group flex h-full flex-col rounded-2xl border hairline bg-card p-6 transition-all ${
                         isClickable
                           ? "cursor-pointer hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
                           : ""
@@ -525,7 +525,7 @@ const Index = () => {
                           )}
                         </div>
                       </div>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                         {p.description}
                       </p>
                     </div>
@@ -535,14 +535,18 @@ const Index = () => {
                     return (
                       <Tooltip key={i}>
                         <TooltipTrigger asChild>
-                          <div>{cardInner}</div>
+                          <div className="h-full">{cardInner}</div>
                         </TooltipTrigger>
                         <TooltipContent side="top">Coming Soon</TooltipContent>
                       </Tooltip>
                     );
                   }
 
-                  return <div key={i}>{cardInner}</div>;
+                  return (
+                    <div key={i} className="h-full">
+                      {cardInner}
+                    </div>
+                  );
                 })}
               </div>
             </div>
